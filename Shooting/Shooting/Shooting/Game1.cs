@@ -26,7 +26,9 @@ namespace Shooting
         //オブジェクトたち
         List<Enemy> EnemyList;
         List<Tama> TamaList;
+        List<Item> ItemList;
         Player player;
+        
 
         bool clearflag; //各面をクリアしたかどうかのフラグ
         const int zanki = 10;　//残機設定
@@ -71,13 +73,14 @@ namespace Shooting
 
             //オブジェクトのロード
             
-            texturePlayer = Content.Load<Texture2D>("butterfly");
+            texturePlayer = Content.Load<Texture2D>("beatle");
             textureEnemy1 = Content.Load<Texture2D>("watermelon");
             textureTama = Content.Load<Texture2D>("tamatate");
             
 
             EnemyList = new List<Enemy>();
             TamaList = new List<Tama>();
+            ItemList = new List<Item>();
             
             //画像のロード
 
@@ -130,7 +133,7 @@ namespace Shooting
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: ここに描画コードを追加します。
-            player.draw();
+            player.draw(spriteBatch);
             foreach (var item in EnemyList)
             {
                 item.draw(spriteBatch);
@@ -140,6 +143,10 @@ namespace Shooting
                 item.draw(spriteBatch);
             }
 
+            foreach (var item in ItemList)
+            {
+                item.draw(spriteBatch);
+            }
             base.Draw(gameTime);
         }
     }

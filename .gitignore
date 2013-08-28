@@ -222,3 +222,5 @@ Temp
 *.userprefs
 *.suo
 *.cache
+*.exe
+*.ptb
