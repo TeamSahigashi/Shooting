@@ -220,3 +220,5 @@ Temp
 *.unityproj
 *.sln
 *.userprefs
+*.suo
+*.cache
