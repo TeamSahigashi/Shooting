@@ -3,3 +3,7 @@ Content\beatle.xnb
 Content\watermelon.xnb
 Content\tamatate.xnb
 Content\tamayoko.xnb
+Content\かぶとむし.png
+Content\すいか.png
+Content\たまたて.png
+Content\たまよこ.png

@@ -67,8 +67,27 @@ namespace Shooting
                 syokaiyobidashi = true;
             }
 
+
+            //なんかあたった？
+            //プレイヤーと弾
+            foreach (var item in TamaList)
+            {
+                if (hit(item,player))
+                {
+                    player.HPReduce(1); //弾の定義まち
+                }
+            }
+            //プレイヤーと敵
+
+            //プレイヤーとアイテム
+            //敵と弾
+
             //ダメージ受けたら残機減る
 
+
+            //いなくなった奴はリストから抜く
+            
+            //
         }
 
         /// <summary>
@@ -101,6 +120,7 @@ namespace Shooting
         {
 
         }
+
 
         /// <summary>
         /// 当たり判定（反射するなら返り値を変える必要あり）

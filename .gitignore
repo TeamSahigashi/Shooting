@@ -222,3 +222,7 @@ Temp
 *.userprefs
 *.suo
 *.cache
+*.exe
+*.ptb
+shooting.suo
+*.suo
