@@ -62,78 +62,60 @@ namespace Shooting
             {
                 return position;
             }
-
+            /// <summary>
+            /// サイズを返す Vector2
+            /// </summary>
+            public void getSize()
+            {
+                return 0;
+            }
         }
-    }
-    class Player : Object
-    {
-        protected Vector2 position;
-        protected Texture2D texture;
-        protected Vector2 size;
-        protected int HP;
-        protected Vector2 speed;
-        protected bool exist;
-        protected int zanki;
-        /// <summary>
-        /// コンストラクタ
-        /// </summary>
-        /// <param name="posi">初期位置</param>
-        /// <param name="settexture">テクスチャ</param>
-        /// <param name="setsize">サイズ</param>
-        /// <param name="setHP">HP</param>
-        /// <param name="setspeed">スピード</param>
-        public Player(Vector2 posi, Texture2D settexture, Vector2 setsize, int setHP, Vector2 setspeed)
+        class Actor : Object
         {
-            position = new Vector2(posi.X, posi.Y);
-            texture = settexture; //うまくいかなかったらここ
-            size = new Vector2(setsize.X, setsize.Y);
-            HP = setHP;
-            speed = setspeed;
-            exist = true;
+            protected Vector2 position;
+            protected Texture2D texture;
+            protected Vector2 size;
+            protected int HP;
+            protected Vector2 speed;
+            protected bool exist;
+            protected int zanki;
+            public Actor(Vector2 posi, Texture2D settexture, Vector2 setsize, int setHP, Vector2 setspeed, int setzanki)
+            {
+                position = new Vector2(posi.X, posi.Y);
+                texture = settexture; //うまくいかなかったらここ
+                size = new Vector2(setsize.X, setsize.Y);
+                HP = setHP;
+                speed = setspeed;
+                exist = true;
+                HP = setHP;
+                zanki = setzanki;
+            }
+            /// <summary>
+            /// 引数だけ残機を減らす
+            /// </summary>
+            /// <param name="hits">残機を減らす数</param>
+            public void zankiReduce(int points)
+            {
+                zanki -= hits;
+            }
+            /// <summary>
+            /// 残機を返す
+            /// </summary>
+            /// <returns></returns>
+            public int zankiCheck()
+            {
+                return zanki;
+            }
         }
-        public Player(int setzanki)
+        class Player : Actor
         {
-            zanki = setzanki;
-        }
-        /// <summary>
-        /// ヒットしたら残機を減らす
-        /// </summary>
-        /// <param name="hits">残機を減らす数</param>
-        public void zankiReduce(int hits)
-        {
-            zanki -= hits;
-        }
-        /// <summary>
-        /// 残機を返す
-        /// </summary>
-        /// <returns></returns>
-        public int zankiCheck()
-        {
-            return zanki;
-        }
-
-        public void update()
-        {
-            KeyboardState KeyState = Keyboard.GetState();
-            if (KeyState.IsKeyDown(Keys.Left)) position.X -= speed.X;
-            if (KeyState.IsKeyDown(Keys.Right)) position.X += speed.X;
-            if (KeyState.IsKeyDown(Keys.Up)) position.Y -= speed.Y;
-            if (KeyState.IsKeyDown(Keys.Down)) position.Y += speed.Y;
-
-        }
-        public void draw()
-        {
-        }
-    }
-    class Enemy : Object
-    {
-        protected Vector2 position;
-        protected Texture2D texture;
-        protected Vector2 size;
-        protected int HP;
-        protected Vector2 speed;
-        protected bool exist;
-        protected int zanki;
+            protected Vector2 position;
+            protected Texture2D texture;
+            protected Vector2 size;
+            protected int HP;
+            protected Vector2 speed;
+            protected bool exist;
+            protected int zanki;
             /// <summary>
             /// コンストラクタ
             /// </summary>
@@ -142,30 +124,71 @@ namespace Shooting
             /// <param name="setsize">サイズ</param>
             /// <param name="setHP">HP</param>
             /// <param name="setspeed">スピード</param>
-        public Enemy(Vector2 posi, Texture2D settexture, Vector2 setsize, int setHP, Vector2 setspeed)
-        {
-            position = new Vector2(posi.X, posi.Y);
-            texture = settexture; //うまくいかなかったらここ
-            size = new Vector2(setsize.X, setsize.Y);
-            HP = setHP;
-            speed = setspeed;
-            exist = true;
-        }
-        public void update()
-        {
+            public Player(Vector2 posi, Texture2D settexture, Vector2 setsize, int setHP, Vector2 setspeed)
+            {
+                position = new Vector2(posi.X, posi.Y);
+                texture = settexture; //うまくいかなかったらここ
+                size = new Vector2(setsize.X, setsize.Y);
+                HP = setHP;
+                speed = setspeed;
+                exist = true;
+            }
 
+            public void update()
+            {
+                KeyboardState KeyState = Keyboard.GetState();
+                if (KeyState.IsKeyDown(Keys.Left)) position.X -= speed.X;
+                if (KeyState.IsKeyDown(Keys.Right)) position.X += speed.X;
+                if (KeyState.IsKeyDown(Keys.Up)) position.Y -= speed.Y;
+                if (KeyState.IsKeyDown(Keys.Down)) position.Y += speed.Y;
+
+            }
+            public void draw()
+            {
+            }
         }
-        public void draw()
+        class Enemy : Actor
         {
+            protected Vector2 position;
+            protected Texture2D texture;
+            protected Vector2 size;
+            protected int HP;
+            protected Vector2 speed;
+            protected bool exist;
+            protected int zanki;
+            /// <summary>
+            /// コンストラクタ
+            /// </summary>
+            /// <param name="posi">初期位置</param>
+            /// <param name="settexture">テクスチャ</param>
+            /// <param name="setsize">サイズ</param>
+            /// <param name="setHP">HP</param>
+            /// <param name="setspeed">スピード</param>
+            public Enemy(Vector2 posi, Texture2D settexture, Vector2 setsize, int setHP, Vector2 setspeed)
+            {
+                position = new Vector2(posi.X, posi.Y);
+                texture = settexture; //うまくいかなかったらここ
+                size = new Vector2(setsize.X, setsize.Y);
+                HP = setHP;
+                speed = setspeed;
+                exist = true;
+            }
+            public void update()
+            {
+
+            }
+            public void draw()
+            {
+            }
         }
-    }
-    class Tama : Object
-    {
-        public void update()
+        class Tama : Object
         {
-        }
-        public void draw()
-        {
+            public void update()
+            {
+            }
+            public void draw()
+            {
+            }
         }
     }
 }
