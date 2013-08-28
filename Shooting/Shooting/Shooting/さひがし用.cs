@@ -53,7 +53,7 @@ namespace Shooting
                     return exist;
                 }
             /// <summary>
-            /// a
+            /// オブジェクトの場所を二次元座標で返す
             /// </summary>
             /// <returns>i</returns>
                 public Vector2 locate(){
@@ -63,12 +63,17 @@ namespace Shooting
             }
             }
         class Player : Object {
+            protected int zanki;
+            public Player(int setzanki){
+                zanki = setzanki;
+            }
             /// <summary>
-            /// hitしたら残機をへらす
+            /// ヒットしたら残機を減らす
             /// </summary>
-            public　void zankiReduce()
+            /// <param name="hits">残機を減らす数</param>
+            public　void zankiReduce(int hits)
             {
-
+                zanki -= hits;
             }
             /// <summary>
             /// 残機を返す
@@ -76,7 +81,7 @@ namespace Shooting
             /// <returns></returns>
             public int zankiCheck()
             {
-                return 0;
+                return zanki;
             }
 
             public void update()
