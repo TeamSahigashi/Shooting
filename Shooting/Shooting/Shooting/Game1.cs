@@ -14,10 +14,11 @@ namespace Shooting
     /// <summary>
     /// 基底 Game クラスから派生した、ゲームのメイン クラスです。
     /// </summary>
-    public class Game1 : Microsoft.Xna.Framework.Game
+    public partial class Game1 : Microsoft.Xna.Framework.Game
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        
 
         public Game1()
         {
@@ -88,4 +89,5 @@ namespace Shooting
             base.Draw(gameTime);
         }
     }
+    
 }

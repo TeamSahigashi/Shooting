@@ -1,0 +1,6 @@
+C:\Users\yushiroPC\Documents\GitHub\Shooting\Shooting\Shooting\Shooting\bin\x86\Debug\Shooting.exe
+C:\Users\yushiroPC\Documents\GitHub\Shooting\Shooting\Shooting\Shooting\bin\x86\Debug\Shooting.pdb
+C:\Users\yushiroPC\Documents\GitHub\Shooting\Shooting\Shooting\Shooting\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\yushiroPC\Documents\GitHub\Shooting\Shooting\Shooting\Shooting\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\yushiroPC\Documents\GitHub\Shooting\Shooting\Shooting\Shooting\obj\x86\Debug\Shooting.exe
+C:\Users\yushiroPC\Documents\GitHub\Shooting\Shooting\Shooting\Shooting\obj\x86\Debug\Shooting.pdb
