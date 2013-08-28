@@ -115,8 +115,4 @@ namespace Shooting
         {
         }
     }
-<<<<<<< HEAD
-    
-=======
 }
->>>>>>> ed2e80b2e630f240136cffa669fe3a6d727b98a0
