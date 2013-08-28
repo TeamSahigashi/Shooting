@@ -62,12 +62,13 @@ namespace Shooting
             {
                 return position;
             }
+
             /// <summary>
-            /// サイズを返す Vector2
+            /// サイズを返す(vector2)
             /// </summary>
-            public void getSize()
+            public Vector2 getSize()
             {
-                return 0;
+                return size;
             }
         }
         class Actor : Object
@@ -105,6 +106,10 @@ namespace Shooting
             public int zankiCheck()
             {
                 return zanki;
+            }
+            public void Tama()
+            {
+                return 0;
             }
         }
         class Player : Actor
