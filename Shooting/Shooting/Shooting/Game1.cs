@@ -26,10 +26,12 @@ namespace Shooting
         List<Tama> TamaList;
         Player player;
 
-        bool clearflag;
-        const int zanki = 10;
-        int stagenum;
-
+        bool clearflag; //各面をクリアしたかどうかのフラグ
+        const int zanki = 10;　//残機設定
+        int stagenum;　//ステージ番号
+        int scenenum; //シーン番号　０：タイトル　１：プレイ画面　２：
+        const int stageMax = 3; //ステージ最大番号
+        bool syokaiyobidashi; //ステージ開始時のみの操作など、初回呼び出しに使う
         
 
         public Game1()
@@ -47,9 +49,9 @@ namespace Shooting
         protected override void Initialize()
         {
             // TODO: ここに初期化ロジックを追加します。
-         
 
 
+            stagenum = 1; //fordg
             base.Initialize();
         }
 
@@ -64,7 +66,7 @@ namespace Shooting
             //シーンのロード
 
             //オブジェクトのロード
-            texture = base.Content.Load<Texture2D>("butterfly");
+            texture = base.Content.Load<Texture2D>("beatle");
             EnemyList = new List<Enemy>();
             TamaList = new List<Tama>();
             
@@ -96,7 +98,17 @@ namespace Shooting
                 this.Exit();
 
             // TODO: ここにゲームのアップデート ロジックを追加します。
-            GameStart();
+
+            if (scenenum == 0)
+            {
+                //タイトルシーンの操作
+                ; 
+            }
+            if (scenenum == 1)
+            {
+                //ゲームプレイ画面の操作
+                GameUpdate();
+            }
             base.Update(gameTime);
         }
 
@@ -109,6 +121,15 @@ namespace Shooting
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: ここに描画コードを追加します。
+            player.draw();
+            foreach (var item in EnemyList)
+            {
+                item.draw();
+            }
+            foreach (var item in TamaList)
+            {
+                item.draw();
+            }
 
             base.Draw(gameTime);
         }

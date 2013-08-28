@@ -94,7 +94,7 @@ namespace Shooting
         }
 
         /// <summary>
-        /// 当たり判定
+        /// 当たり判定（反射するなら返り値を変える必要あり）
         /// </summary>
         /// <param name="A">当たるもの</param>
         /// <param name="B">当てられるもの</param>
@@ -106,8 +106,25 @@ namespace Shooting
             int Y0 = (int)A.locate().Y;
             int Y1 = (int)A.locate().Y + (int)B.getSize().Y;
 
+            int X2 = (int)B.locate().X;
+            int X3 = (int)B.locate().X + (int)A.getSize().X;
+            int Y2 = (int)B.locate().Y;
+            int Y3 = (int)B.locate().Y + (int)B.getSize().Y;
 
+            if (X0 < X3 && X2 < X1 && Y0 < Y3 && Y2 < Y1)
+            {
+                if (((Y2 <= Y0 && Y0 <= Y3) || (Y2 <= Y1 && Y1 <= Y3))) //下から上に衝突or上から下に衝突
+                {
 
+                }
+                if (((X2 <= X1 && X1 <= X3) || (X0 <= X3 && X2 <= X0))) //横から衝突
+                {
+
+                }
+
+                return true;
+            }
+            return false;
         }
     }
 }

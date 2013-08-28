@@ -1,1 +1,3 @@
 Content\butterfly.xnb
+Content\beatle.xnb
+Content\watermelon.xnb

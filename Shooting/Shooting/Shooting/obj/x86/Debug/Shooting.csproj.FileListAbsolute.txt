@@ -10,3 +10,6 @@ C:\Users\yoshi\Documents\GitHub\Shooting\Shooting\Shooting\Shooting\obj\x86\Debu
 C:\Users\yoshi\Documents\GitHub\Shooting\Shooting\Shooting\Shooting\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\yoshi\Documents\GitHub\Shooting\Shooting\Shooting\Shooting\obj\x86\Debug\Shooting.exe
 C:\Users\yoshi\Documents\GitHub\Shooting\Shooting\Shooting\Shooting\obj\x86\Debug\Shooting.pdb
+C:\Users\yushiroPC\Documents\GitHub\Shooting\Shooting\Shooting\Shooting\bin\x86\Debug\Content\butterfly.xnb
+C:\Users\yushiroPC\Documents\GitHub\Shooting\Shooting\Shooting\Shooting\bin\x86\Debug\Content\beatle.xnb
+C:\Users\yushiroPC\Documents\GitHub\Shooting\Shooting\Shooting\Shooting\bin\x86\Debug\Content\watermelon.xnb
