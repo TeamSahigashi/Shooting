@@ -29,8 +29,8 @@ namespace Shooting
             protected int HP;
             protected Vector2 speed;
             protected bool exist;
-
             public Object() { }
+
             /// <summary>
             /// コンストラクタ
             /// </summary>
@@ -39,6 +39,8 @@ namespace Shooting
             /// <param name="setsize">サイズ</param>
             /// <param name="setHP">HP</param>
             /// <param name="setspeed">スピード</param>
+            /// 
+
             public Object(Vector2 posi, Texture2D settexture, Vector2 setsize, int setHP, Vector2 setspeed)
             {
                 position = new Vector2(posi.X, posi.Y);
@@ -116,144 +118,135 @@ namespace Shooting
             {
                 return zanki;
             }
-            public void Tama()
+            public void MakeTama()
             {
                 return;
             }
-            public void update()
-            {
-            }
-            public void draw()
-            {
-                spriteBatch.Begin();
-                spriteBatch.Draw(playertexture, position, Color.White);
-                spriteBatch.End();
-            }
-        }
-        class Player : Actor
-        {
-            public Player() { }
 
-            /// <summary>
-            /// プレイヤーコンストラクタ
-            /// </summary>
-            /// <param name="posi">プレイやを表示する位置</param>
-            /// <param name="settexture">プレイヤーのテクスチャ</param>
-            /// <param name="setsize">プレイヤーのサイズ</param>
-            /// <param name="setHP">プレイヤーのヒットポイント</param>
-            /// <param name="setspeed">プレイヤーのスピード</param>
-            /// <param name="setzanki">プレイヤーの残機</param>
-            public Player(Vector2 posi, Texture2D settexture, Vector2 setsize, int setHP, Vector2 setspeed, int setzanki)
+            class Player : Actor
             {
-                position = new Vector2(posi.X, posi.Y);
-                texture = settexture; //うまくいかなかったらここ
-                size = new Vector2(setsize.X, setsize.Y);
-                HP = setHP;
-                speed = setspeed;
-                exist = true;
-            }
+                public Player() { }
 
-            public void update()
-            {
-                KeyboardState KeyState = Keyboard.GetState();
-                if (KeyState.IsKeyDown(Keys.Left)) position.X -= speed.X;
-                if (KeyState.IsKeyDown(Keys.Right)) position.X += speed.X;
-                if (KeyState.IsKeyDown(Keys.Up)) position.Y -= speed.Y;
-                if (KeyState.IsKeyDown(Keys.Down)) position.Y += speed.Y;
-
-            }
-            public void draw()
-            {
-            }
-        }
-        class Enemy : Actor
-        {
-            public Enemy(){}
-            /// <summary>
-            /// コンストラクタ
-            /// </summary>
-            /// <param name="posi">初期位置</param>
-            /// <param name="settexture">テクスチャ</param>
-            /// <param name="setsize">サイズ</param>
-            /// <param name="setHP">HP</param>
-            /// <param name="setspeed">スピード</param>
-            public Enemy(Vector2 posi, Texture2D settexture, Vector2 setsize, int setHP, Vector2 setspeed, int setzanki)
-            {
-                position = new Vector2(posi.X, posi.Y);
-                texture = settexture; //うまくいかなかったらここ
-                size = new Vector2(setsize.X, setsize.Y);
-                HP = setHP;
-                speed = setspeed;
-                exist = true;
-            }
-            public void update()
-            {
-
-            }
-            public void draw()
-            {
-                spriteBatch.Begin();
-                spriteBatch.Draw(enemytexture, position, Color.White);
-                spriteBatch.End();
-            }
-        }
-        class Tama : Object
-        {
-            protected Vector2 shokiposi;
-            public Tama(Vector2 posi, Texture2D settexture, Vector2 setsize, int setHP, Vector2 setspeed, Vector2 shokiposi)
-            {
-                position = new Vector2(posi.X, posi.Y);
-                texture = settexture; //うまくいかなかったらここ
-                size = new Vector2(setsize.X, setsize.Y);
-                HP = setHP;
-                speed = setspeed;
-                exist = true;
-                shokiposi = new Vector2(shokiposi.X, shokiposi.Y);
-            }
-            /// <summary>
-            /// 玉をセット
-            /// </summary>
-            /// <param name="posi">玉の初期位置</param>
-            /// <param name="ugoki">玉の動き</param>
-            public void set(Vector2 setshokiposi, int ugoki)
-            {
-                shokiposi = setshokiposi;
-                switch (ugoki)
+                /// <summary>
+                /// プレイヤーコンストラクタ
+                /// </summary>
+                /// <param name="posi">プレイやを表示する位置</param>
+                /// <param name="settexture">プレイヤーのテクスチャ</param>
+                /// <param name="setsize">プレイヤーのサイズ</param>
+                /// <param name="setHP">プレイヤーのヒットポイント</param>
+                /// <param name="setspeed">プレイヤーのスピード</param>
+                /// <param name="setzanki">プレイヤーの残機</param>
+                public Player(Vector2 posi, Texture2D settexture, Vector2 setsize, int setHP, Vector2 setspeed, int setzanki)
                 {
-                    case 1:
-                        speed = 1;
-                        break;
-                    case 2:
-                        speed = 2;
-                        break;
-                    default:
-                        speed = 3;
+                    position = new Vector2(posi.X, posi.Y);
+                    texture = settexture; //うまくいかなかったらここ
+                    size = new Vector2(setsize.X, setsize.Y);
+                    HP = setHP;
+                    speed = setspeed;
+                    exist = true;
                 }
-                return;
-            }
-            public void update()
-            {
-            }
-            public void draw()
-            {
-                spriteBatch.Begin();
-                spriteBatch.Draw(tamatexture, position, Color.White);
-                spriteBatch.End();
-            }
-        }
-        class Item : Object
-        {
-            public void update()
-            {
-            }
-            public void draw()
-            {
-                spriteBatch.Begin();
-                spriteBatch.Draw(itemtexture, position, Color.White);
-                spriteBatch.End();
-            }
 
-        
+                public void update()
+                {
+                    KeyboardState KeyState = Keyboard.GetState();
+                    if (KeyState.IsKeyDown(Keys.Left)) position.X -= speed.X;
+                    if (KeyState.IsKeyDown(Keys.Right)) position.X += speed.X;
+                    if (KeyState.IsKeyDown(Keys.Up)) position.Y -= speed.Y;
+                    if (KeyState.IsKeyDown(Keys.Down)) position.Y += speed.Y;
+
+                }
+                public void draw()
+                {
+                }
+            }
+            class Enemy : Actor
+            {
+                public Enemy() { }
+                /// <summary>
+                /// 敵のコンストラクタ
+                /// </summary>
+                /// <param name="posi">敵の初期位置</param>
+                /// <param name="settexture">敵のテクスチャ</param>
+                /// <param name="setsize">敵のサイズ</param>
+                /// <param name="setHP">敵のHP</param>
+                /// <param name="setspeed">敵のスピード</param>
+                /// <param name="setzanki">敵の残機</param>
+                public Enemy(Vector2 posi, Texture2D settexture, Vector2 setsize, int setHP, Vector2 setspeed, int setzanki)
+                {
+                    position = new Vector2(posi.X, posi.Y);
+                    texture = settexture; //うまくいかなかったらここ
+                    size = new Vector2(setsize.X, setsize.Y);
+                    HP = setHP;
+                    speed = setspeed;
+                    exist = true;
+                }
+                public void update()
+                {
+
+                }
+                public void draw(SpriteBatch spriteBatch)
+                {
+                    spriteBatch.Begin();
+                    spriteBatch.Draw(texture, position, Color.White);
+                    spriteBatch.End();
+                }
+            }
+            class Tama : Object
+            {
+                protected Vector2 shokiposi;
+                public Tama(Vector2 posi, Texture2D settexture, Vector2 setsize, int setHP, Vector2 setspeed, Vector2 shokiposi)
+                {
+                    position = new Vector2(posi.X, posi.Y);
+                    texture = settexture; //うまくいかなかったらここ
+                    size = new Vector2(setsize.X, setsize.Y);
+                    HP = setHP;
+                    speed = setspeed;
+                    exist = true;
+                    shokiposi = new Vector2(shokiposi.X, shokiposi.Y);
+                }
+                /// <summary>
+                /// 玉をセット
+                /// </summary>
+                /// <param name="posi">玉の初期位置</param>
+                /// <param name="ugoki">玉の動き</param>
+                public void set(Vector2 setshokiposi, int ugoki)
+                {
+                    shokiposi = setshokiposi;
+                    switch (ugoki)
+                    {
+                        case 1:
+                            speed.X = 1;
+                            break;
+                        case 2:
+                            speed.X = 2;
+                            break;
+                    }
+                    return;
+                }
+                public void update()
+                {
+                }
+                public void draw(SpriteBatch spriteBatch)
+                {
+                    spriteBatch.Begin();
+                    spriteBatch.Draw(texture, position, Color.White);
+                    spriteBatch.End();
+                }
+            }
+            class Item : Object
+            {
+                public void update()
+                {
+                }
+                public void draw(SpriteBatch spriteBatch)
+                {
+                    spriteBatch.Begin();
+                    spriteBatch.Draw(texture, position, Color.White);
+                    spriteBatch.End();
+                }
+
+
+            }
         }
     }
 }
