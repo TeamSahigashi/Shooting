@@ -155,8 +155,11 @@ namespace Shooting
                 if (KeyState.IsKeyDown(Keys.Down)) position.Y += speed.Y;
 
             }
-            public void draw()
+            public void draw(SpriteBatch spriteBatch)
             {
+                spriteBatch.Begin();
+                spriteBatch.Draw(texture, position, Color.White);
+                spriteBatch.End();
             }
         }
         class Enemy : Actor
@@ -194,6 +197,15 @@ namespace Shooting
         class Tama : Object
         {
             protected Vector2 shokiposi;
+            /// <summary>
+            /// 玉のコントラクタ
+            /// </summary>
+            /// <param name="posi">玉の位置</param>
+            /// <param name="settexture"></param>
+            /// <param name="setsize"></param>
+            /// <param name="setHP"></param>
+            /// <param name="setspeed"></param>
+            /// <param name="shokiposi"></param>
             public Tama(Vector2 posi, Texture2D settexture, Vector2 setsize, int setHP, Vector2 setspeed, Vector2 shokiposi)
             {
                 position = new Vector2(posi.X, posi.Y);
