@@ -66,7 +66,14 @@ namespace Shooting
             {
                 return position;
             }
-
+            /// <summary>
+            /// HPを返す
+            /// </summary>
+            /// <returns>ヒットポイント</returns>
+            public int checkHP()
+            {
+                return HP;
+            }
             /// <summary>
             /// サイズを返す(vector2)
             /// </summary>
@@ -145,7 +152,14 @@ namespace Shooting
                 speed = setspeed;
                 exist = true;
             }
-
+            /// <summary>
+            /// 死んだときなど、プレイヤーの位置を再設定
+            /// </summary>
+            /// <param name="pos">プレイヤーの再設定位置</param>
+            public void setPos(Vector2 pos)
+            {
+                position = pos;
+            }
             public void update()
             {
                 KeyboardState KeyState = Keyboard.GetState();
@@ -174,7 +188,8 @@ namespace Shooting
             /// <param name="setHP">敵のHP</param>
             /// <param name="setspeed">敵のスピード</param>
             /// <param name="setzanki">敵の残機</param>
-            public Enemy(Vector2 posi, Texture2D settexture, Vector2 setsize, int setHP, Vector2 setspeed, int setzanki)
+            /// <param name="setshokiposi">敵の初期位置</param>
+            public Enemy(Vector2 posi, Texture2D settexture, Vector2 setsize, int setHP, Vector2 setspeed, int setzanki, Vector2 setshokiposi)
             {
                 position = new Vector2(posi.X, posi.Y);
                 texture = settexture; //うまくいかなかったらここ
@@ -183,6 +198,7 @@ namespace Shooting
                 speed = setspeed;
                 exist = true;
             }
+            public 
             public void update()
             {
 
@@ -201,12 +217,12 @@ namespace Shooting
             /// 玉のコントラクタ
             /// </summary>
             /// <param name="posi">玉の位置</param>
-            /// <param name="settexture"></param>
-            /// <param name="setsize"></param>
-            /// <param name="setHP"></param>
-            /// <param name="setspeed"></param>
-            /// <param name="shokiposi"></param>
-            public Tama(Vector2 posi, Texture2D settexture, Vector2 setsize, int setHP, Vector2 setspeed, Vector2 shokiposi)
+            /// <param name="settexture">玉のテクスチャ</param>
+            /// <param name="setsize">玉のサイズ</param>
+            /// <param name="setHP">玉の威力</param>
+            /// <param name="setspeed">玉のスピード</param>
+            /// <param name="setshokiposi">玉の初期位置</param>
+            public Tama(Vector2 posi, Texture2D settexture, Vector2 setsize, int setHP, Vector2 setspeed, Vector2 setshokiposi)
             {
                 position = new Vector2(posi.X, posi.Y);
                 texture = settexture; //うまくいかなかったらここ
