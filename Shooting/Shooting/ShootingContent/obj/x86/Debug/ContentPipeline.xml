@@ -7,15 +7,15 @@
       <TargetProfile>HiDef</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\yushiroPC\Documents\GitHub\Shooting\Shooting\Shooting\ShootingContent\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\yushiroPC\Documents\GitHub\Shooting\Shooting\Shooting\Shooting\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\yushiroPC\Documents\GitHub\Shooting\Shooting\Shooting\ShootingContent\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\yushiroPC\Documents\GitHub\Shooting\Shooting\Shooting\Shooting\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\yoshi\Documents\GitHub\Shooting\Shooting\Shooting\ShootingContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\yoshi\Documents\GitHub\Shooting\Shooting\Shooting\Shooting\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\yoshi\Documents\GitHub\Shooting\Shooting\Shooting\ShootingContent\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\yoshi\Documents\GitHub\Shooting\Shooting\Shooting\Shooting\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
         <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
-        <Value>2012-11-20T03:32:01.0394513+09:00</Value>
+        <Value>2013-08-28T10:19:08.266702+09:00</Value>
       </Assembly>
     </Assemblies>
   </Asset>
