@@ -102,9 +102,9 @@ namespace Shooting
         bool hit(Object A, Object B)
         {
             int X0 = (int)A.locate().X;
-            int X1 = (int)B.locate().X;
+            int X1 = (int)A.locate().X + (int)A.getSize().X;
             int Y0 = (int)A.locate().Y;
-            int Y1 = (int)B.locate().Y;
+            int Y1 = (int)A.locate().Y + (int)B.getSize().Y;
 
 
 
