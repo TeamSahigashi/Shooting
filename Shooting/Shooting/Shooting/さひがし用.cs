@@ -75,7 +75,7 @@ namespace Shooting
         }
         class Actor : Object
         {
-            int zanki;
+            protected int zanki;
 
 
             public Actor() { }
@@ -95,10 +95,18 @@ namespace Shooting
             /// <summary>
             /// 引数だけ残機を減らす
             /// </summary>
-            /// <param name="hits">残機を減らす数</param>
+            /// <param name="points">残機を減らす数int</param>
             public void zankiReduce(int points)
             {
                 zanki -= points;
+            }
+            /// <summary>
+            /// 引数だけHPを減らす
+            /// </summary>
+            /// <param name="points">HPを減らす数int</param>
+            public void HPReduce(int points)
+            {
+                HP -= points;
             }
             /// <summary>
             /// 残機を返す
@@ -112,6 +120,15 @@ namespace Shooting
             {
                 return;
             }
+            public void update()
+            {
+            }
+            public void draw()
+            {
+                spriteBatch.Begin();
+                spriteBatch.Draw(playertexture, position, Color.White);
+                spriteBatch.End();
+            }
         }
         class Player : Actor
         {
@@ -123,7 +140,7 @@ namespace Shooting
             /// <param name="setsize">サイズ</param>
             /// <param name="setHP">HP</param>
             /// <param name="setspeed">スピード</param>
-            Player(Vector2 posi, Texture2D settexture, Vector2 setsize, int setHP, Vector2 setspeed)
+            Player(Vector2 posi, Texture2D settexture, Vector2 setsize, int setHP, Vector2 setspeed, int setzanki)
             {
                 position = new Vector2(posi.X, posi.Y);
                 texture = settexture; //うまくいかなかったらここ
@@ -148,6 +165,7 @@ namespace Shooting
         }
         class Enemy : Actor
         {
+            public Enemy(){}
             /// <summary>
             /// コンストラクタ
             /// </summary>
@@ -156,7 +174,7 @@ namespace Shooting
             /// <param name="setsize">サイズ</param>
             /// <param name="setHP">HP</param>
             /// <param name="setspeed">スピード</param>
-            Enemy(Vector2 posi, Texture2D settexture, Vector2 setsize, int setHP, Vector2 setspeed)
+            public Enemy(Vector2 posi, Texture2D settexture, Vector2 setsize, int setHP, Vector2 setspeed, int setzanki)
             {
                 position = new Vector2(posi.X, posi.Y);
                 texture = settexture; //うまくいかなかったらここ
@@ -171,15 +189,53 @@ namespace Shooting
             }
             public void draw()
             {
+                spriteBatch.Begin();
+                spriteBatch.Draw(enemytexture, position, Color.White);
+                spriteBatch.End();
             }
         }
         class Tama : Object
         {
+            protected Vector2 shokiposi;
+            public Tama(Vector2 posi, Texture2D settexture, Vector2 setsize, int setHP, Vector2 setspeed, Vector2 shokiposi)
+            {
+                position = new Vector2(posi.X, posi.Y);
+                texture = settexture; //うまくいかなかったらここ
+                size = new Vector2(setsize.X, setsize.Y);
+                HP = setHP;
+                speed = setspeed;
+                exist = true;
+                shokiposi = new Vector2(shokiposi.X, shokiposi.Y);
+            }
+            /// <summary>
+            /// 玉をセット
+            /// </summary>
+            /// <param name="posi">玉の初期位置</param>
+            /// <param name="ugoki">玉の動き</param>
+            public void set(Vector2 setshokiposi, int ugoki)
+            {
+                shokiposi = setshokiposi;
+                switch (ugoki)
+                {
+                    case 1:
+                        speed = 1;
+                        break;
+                    case 2:
+                        speed = 2;
+                        break;
+                    default:
+                        speed = 3;
+                }
+                return;
+            }
             public void update()
             {
             }
             public void draw()
             {
+                spriteBatch.Begin();
+                spriteBatch.Draw(tamatexture, position, Color.White);
+                spriteBatch.End();
             }
         }
         class Item : Object
@@ -188,7 +244,10 @@ namespace Shooting
             {
             }
             public void draw()
-            { 
+            {
+                spriteBatch.Begin();
+                spriteBatch.Draw(itemtexture, position, Color.White);
+                spriteBatch.End();
             }
 
         
