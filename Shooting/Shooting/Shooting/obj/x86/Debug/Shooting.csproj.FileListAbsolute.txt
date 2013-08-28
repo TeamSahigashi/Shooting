@@ -13,3 +13,9 @@ C:\Users\yoshi\Documents\GitHub\Shooting\Shooting\Shooting\Shooting\obj\x86\Debu
 C:\Users\yushiroPC\Documents\GitHub\Shooting\Shooting\Shooting\Shooting\bin\x86\Debug\Content\butterfly.xnb
 C:\Users\yushiroPC\Documents\GitHub\Shooting\Shooting\Shooting\Shooting\bin\x86\Debug\Content\beatle.xnb
 C:\Users\yushiroPC\Documents\GitHub\Shooting\Shooting\Shooting\Shooting\bin\x86\Debug\Content\watermelon.xnb
+C:\Users\yushiroPC\Documents\GitHub\Shooting\Shooting\Shooting\Shooting\bin\x86\Debug\Content\tamatate.xnb
+C:\Users\yushiroPC\Documents\GitHub\Shooting\Shooting\Shooting\Shooting\bin\x86\Debug\Content\tamayoko.xnb
+C:\Users\yushiroPC\Documents\GitHub\Shooting\Shooting\Shooting\Shooting\bin\x86\Debug\Content\かぶとむし.png
+C:\Users\yushiroPC\Documents\GitHub\Shooting\Shooting\Shooting\Shooting\bin\x86\Debug\Content\すいか.png
+C:\Users\yushiroPC\Documents\GitHub\Shooting\Shooting\Shooting\Shooting\bin\x86\Debug\Content\たまたて.png
+C:\Users\yushiroPC\Documents\GitHub\Shooting\Shooting\Shooting\Shooting\bin\x86\Debug\Content\たまよこ.png
