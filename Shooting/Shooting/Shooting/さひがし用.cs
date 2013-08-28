@@ -29,6 +29,8 @@ namespace Shooting
             protected int HP;
             protected Vector2 speed;
             protected bool exist;
+
+            public Object() { }
             /// <summary>
             /// コンストラクタ
             /// </summary>
@@ -37,7 +39,7 @@ namespace Shooting
             /// <param name="setsize">サイズ</param>
             /// <param name="setHP">HP</param>
             /// <param name="setspeed">スピード</param>
-            Object(Vector2 posi, Texture2D settexture, Vector2 setsize, int setHP, Vector2 setspeed)
+            public Object(Vector2 posi, Texture2D settexture, Vector2 setsize, int setHP, Vector2 setspeed)
             {
                 position = new Vector2(posi.X, posi.Y);
                 texture = settexture; //うまくいかなかったらここ
@@ -73,13 +75,12 @@ namespace Shooting
         }
         class Actor : Object
         {
-            protected Vector2 position;
-            protected Texture2D texture;
-            protected Vector2 size;
-            protected int HP;
-            protected Vector2 speed;
-            protected bool exist;
-            protected int zanki;
+            int zanki;
+
+
+            public Actor() { }
+
+
             public Actor(Vector2 posi, Texture2D settexture, Vector2 setsize, int setHP, Vector2 setspeed, int setzanki)
             {
                 position = new Vector2(posi.X, posi.Y);
@@ -114,13 +115,6 @@ namespace Shooting
         }
         class Player : Actor
         {
-            protected Vector2 position;
-            protected Texture2D texture;
-            protected Vector2 size;
-            protected int HP;
-            protected Vector2 speed;
-            protected bool exist;
-            protected int zanki;
             /// <summary>
             /// コンストラクタ
             /// </summary>
@@ -154,13 +148,6 @@ namespace Shooting
         }
         class Enemy : Actor
         {
-            protected Vector2 position;
-            protected Texture2D texture;
-            protected Vector2 size;
-            protected int HP;
-            protected Vector2 speed;
-            protected bool exist;
-            protected int zanki;
             /// <summary>
             /// コンストラクタ
             /// </summary>

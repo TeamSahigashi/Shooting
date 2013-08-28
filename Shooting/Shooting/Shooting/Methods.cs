@@ -20,6 +20,22 @@ namespace Shooting
         /// <param name="stagenum">ステージ番号</param>
         void GameUpdate()
         {
+            player.update();
+            if (EnemyList != null)
+            {
+                foreach (var item in EnemyList)
+                {
+                    item.update();
+                }
+            }
+            if (TamaList != null)
+            {
+                foreach (var item in TamaList)
+                {
+                    item.update();
+                }
+            }
+
             switch (stagenum)
             {
                 case 0:
