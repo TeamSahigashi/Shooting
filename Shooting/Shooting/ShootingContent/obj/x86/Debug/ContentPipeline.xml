@@ -28,6 +28,24 @@
       <Output>C:\Users\yoshi\Documents\GitHub\Shooting\Shooting\Shooting\Shooting\bin\x86\Debug\Content\watermelon.xnb</Output>
       <Time>2013-08-28T18:21:46.0582507+09:00</Time>
     </Item>
+    <Item>
+      <Source>たまたて.png</Source>
+      <Name>tamatate</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\yushiroPC\Documents\GitHub\Shooting\Shooting\Shooting\Shooting\bin\x86\Debug\Content\tamatate.xnb</Output>
+      <Time>2013-08-28T18:03:51.078034+09:00</Time>
+    </Item>
+    <Item>
+      <Source>たまよこ.png</Source>
+      <Name>tamayoko</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\yushiroPC\Documents\GitHub\Shooting\Shooting\Shooting\Shooting\bin\x86\Debug\Content\tamayoko.xnb</Output>
+      <Time>2013-08-28T18:03:33.3690211+09:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>
