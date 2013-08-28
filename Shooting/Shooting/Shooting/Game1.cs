@@ -18,6 +18,18 @@ namespace Shooting
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+
+        Texture2D texture;
+
+        //オブジェクトたち
+        List<Enemy> EnemyList;
+        List<Tama> TamaList;
+        Player player;
+
+        bool clearflag;
+        const int zanki = 10;
+        int stagenum;
+
         
 
         public Game1()
@@ -35,6 +47,8 @@ namespace Shooting
         protected override void Initialize()
         {
             // TODO: ここに初期化ロジックを追加します。
+         
+
 
             base.Initialize();
         }
@@ -47,8 +61,18 @@ namespace Shooting
         {
             // 新規の SpriteBatch を作成します。これはテクスチャーの描画に使用できます。
             spriteBatch = new SpriteBatch(GraphicsDevice);
+            //シーンのロード
+
+            //オブジェクトのロード
+            texture = base.Content.Load<Texture2D>("butterfly");
+            EnemyList = new List<Enemy>();
+            TamaList = new List<Tama>();
+            
+            //画像のロード
+
 
             // TODO: this.Content クラスを使用して、ゲームのコンテンツを読み込みます。
+           
         }
 
         /// <summary>
