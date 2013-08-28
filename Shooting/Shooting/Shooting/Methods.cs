@@ -18,7 +18,7 @@ namespace Shooting
         /// ゲームを開始する
         /// </summary>
         /// <param name="stagenum">ステージ番号</param>
-        void GameStart()
+        void GameUpdate()
         {
             switch (stagenum)
             {
@@ -34,6 +34,16 @@ namespace Shooting
                 default:
                     break;
             }
+
+            //クリアしたら次の面へいく
+            if (clearflag)
+            {
+                stagenum++;
+                clearflag = false;
+            }
+
+            //ダメージ受けたら残機減る
+
         }
 
         /// <summary>
@@ -42,6 +52,10 @@ namespace Shooting
         void Makestage1()
         {
 
+
+
+
+          
         }
 
 
@@ -63,5 +77,21 @@ namespace Shooting
 
         }
 
+        /// <summary>
+        /// 当たり判定
+        /// </summary>
+        /// <param name="A">当たるもの</param>
+        /// <param name="B">当てられるもの</param>
+        /// <returns>当たった:true</returns>
+        bool hit(Object A, Object B)
+        {
+            int X0 = (int)A.locate().X;
+            int X1 = (int)B.locate().X;
+            int Y0 = (int)A.locate().Y;
+            int Y1 = (int)B.locate().Y;
+
+
+
+        }
     }
 }
