@@ -19,7 +19,9 @@ namespace Shooting
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
-        Texture2D texture;
+        Texture2D texturePlayer;
+        Texture2D textureTama;
+        Texture2D textureEnemy1;
 
         //オブジェクトたち
         List<Enemy> EnemyList;
@@ -66,7 +68,11 @@ namespace Shooting
             //シーンのロード
 
             //オブジェクトのロード
-            texture = base.Content.Load<Texture2D>("beatle");
+            texturePlayer = base.Content.Load<Texture2D>("beatle");
+            textureEnemy1 = base.Content.Load<Texture2D>("watermelon");
+            textureTama = base.Content.Load<Texture2D>("tamatate");
+
+
             EnemyList = new List<Enemy>();
             TamaList = new List<Tama>();
             
