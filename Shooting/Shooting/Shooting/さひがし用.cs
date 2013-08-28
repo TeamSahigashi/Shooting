@@ -13,7 +13,6 @@ using Microsoft.Xna.Framework.Media;
 namespace Shooting
 {
     public partial class Game1 : Microsoft.Xna.Framework.Game
-    
     {
         //ここのあたりに定義を書いていくでござる
         void test()
@@ -22,7 +21,8 @@ namespace Shooting
             return;
         }
 
-        class Object{
+        class Object
+        {
             protected Vector2 position;
             protected Texture2D texture;
             protected Vector2 size;
@@ -37,7 +37,8 @@ namespace Shooting
             /// <param name="setsize">サイズ</param>
             /// <param name="setHP">HP</param>
             /// <param name="setspeed">スピード</param>
-            public Object(Vector2 posi, Texture2D settexture, Vector2 setsize, int setHP, Vector2 setspeed){
+            public Object(Vector2 posi, Texture2D settexture, Vector2 setsize, int setHP, Vector2 setspeed)
+            {
                 position = new Vector2(posi.X, posi.Y);
                 texture = settexture; //うまくいかなかったらここ
                 size = new Vector2(setsize.X, setsize.Y);
@@ -45,72 +46,73 @@ namespace Shooting
                 speed = setspeed;
                 exist = true;
             }
-           /// <summary>
-           /// 存在してるかどうか
-           /// </summary>
-           /// <returns>存在しているならtrue</returns>
-                public bool checkExist(){
-                    return exist;
-                }
+            /// <summary>
+            /// 存在してるかどうか
+            /// </summary>
+            /// <returns>存在しているならtrue</returns>
+            public bool checkExist()
+            {
+                return exist;
+            }
             /// <summary>
             /// オブジェクトの場所を二次元座標で返す
             /// </summary>
             /// <returns>i</returns>
-                public Vector2 locate(){
-                    return position;
-                }
-
-            }
-            }
-        class Player : Object {
-            protected int zanki;
-            public Player(int setzanki){
-                zanki = setzanki;
-            }
-            /// <summary>
-            /// ヒットしたら残機を減らす
-            /// </summary>
-            /// <param name="hits">残機を減らす数</param>
-            public　void zankiReduce(int hits)
+            public Vector2 locate()
             {
-                zanki -= hits;
-            }
-            /// <summary>
-            /// 残機を返す
-            /// </summary>
-            /// <returns></returns>
-            public int zankiCheck()
-            {
-                return zanki;
+                return position;
             }
 
-            public void update()
-            {
-            }
-            public void draw()
-            {
-            }
         }
-        class Enemy : Object
-        {
-            public void update()
-            {
-
-            }
-            public void draw()
-            {
-            }
-        }
-        class Tama : Object
-        {
-            public void update()
-            {
-            }
-            public void draw()
-            {
-            }
-        }
-            
     }
-    
+    class Player : Object
+    {
+        protected int zanki;
+        public Player(int setzanki)
+        {
+            zanki = setzanki;
+        }
+        /// <summary>
+        /// ヒットしたら残機を減らす
+        /// </summary>
+        /// <param name="hits">残機を減らす数</param>
+        public void zankiReduce(int hits)
+        {
+            zanki -= hits;
+        }
+        /// <summary>
+        /// 残機を返す
+        /// </summary>
+        /// <returns></returns>
+        public int zankiCheck()
+        {
+            return zanki;
+        }
+
+        public void update()
+        {
+        }
+        public void draw()
+        {
+        }
+    }
+    class Enemy : Object
+    {
+        public void update()
+        {
+
+        }
+        public void draw()
+        {
+        }
+    }
+    class Tama : Object
+    {
+        public void update()
+        {
+        }
+        public void draw()
+        {
+        }
+    }
 }
