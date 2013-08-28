@@ -18,7 +18,7 @@ namespace Shooting
         //ここのあたりに定義を書いていくでござる
         void test()
         {
-            Console.WriteLine("＾ω＾）おっ");
+            Console.WriteLine("うぇーいｗｗ");
             return;
         }
 
