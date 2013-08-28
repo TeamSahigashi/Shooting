@@ -72,7 +72,7 @@ namespace Shooting
                 this.Exit();
 
             // TODO: ここにゲームのアップデート ロジックを追加します。
-
+            GameStart();
             base.Update(gameTime);
         }
 
