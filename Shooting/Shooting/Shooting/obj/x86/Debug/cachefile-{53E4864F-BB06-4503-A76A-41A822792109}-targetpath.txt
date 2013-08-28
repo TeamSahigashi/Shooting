@@ -1,3 +1,5 @@
 Content\butterfly.xnb
 Content\beatle.xnb
 Content\watermelon.xnb
+Content\tamatate.xnb
+Content\tamayoko.xnb

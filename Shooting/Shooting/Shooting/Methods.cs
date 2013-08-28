@@ -20,6 +20,14 @@ namespace Shooting
         /// <param name="stagenum">ステージ番号</param>
         void GameUpdate()
         {
+            if (syokaiyobidashi)
+            {
+                player = new Player(Vector2.Zero, texturePlayer, new Vector2(texturePlayer.Width, texturePlayer.Height), zanki, new Vector2(1, 1), zanki);
+                syokaiyobidashi = false;
+                
+            }
+
+
             player.update();
             if (EnemyList != null)
             {
@@ -56,6 +64,7 @@ namespace Shooting
             {
                 stagenum++;
                 clearflag = false;
+                syokaiyobidashi = true;
             }
 
             //ダメージ受けたら残機減る
