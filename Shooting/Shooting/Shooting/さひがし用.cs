@@ -132,15 +132,18 @@ namespace Shooting
         }
         class Player : Actor
         {
+            public Player() { }
+
             /// <summary>
-            /// コンストラクタ
+            /// プレイヤーコンストラクタ
             /// </summary>
-            /// <param name="posi">初期位置</param>
-            /// <param name="settexture">テクスチャ</param>
-            /// <param name="setsize">サイズ</param>
-            /// <param name="setHP">HP</param>
-            /// <param name="setspeed">スピード</param>
-            Player(Vector2 posi, Texture2D settexture, Vector2 setsize, int setHP, Vector2 setspeed, int setzanki)
+            /// <param name="posi">プレイやを表示する位置</param>
+            /// <param name="settexture">プレイヤーのテクスチャ</param>
+            /// <param name="setsize">プレイヤーのサイズ</param>
+            /// <param name="setHP">プレイヤーのヒットポイント</param>
+            /// <param name="setspeed">プレイヤーのスピード</param>
+            /// <param name="setzanki">プレイヤーの残機</param>
+            public Player(Vector2 posi, Texture2D settexture, Vector2 setsize, int setHP, Vector2 setspeed, int setzanki)
             {
                 position = new Vector2(posi.X, posi.Y);
                 texture = settexture; //うまくいかなかったらここ
