@@ -1,2 +1,16 @@
 ＾ω＾)おっ
-おお！！
+おお！
+
+受けたダメージだけHPへらす
+damage(int )
+
+コンストラクタをplayer enemy tamaそれぞれに
+
+class player{
+
+public player(...){
+
+}
+
+？？
+？
