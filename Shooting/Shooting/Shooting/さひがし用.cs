@@ -195,5 +195,16 @@ namespace Shooting
             {
             }
         }
+        class Item : Object
+        {
+            public void update()
+            {
+            }
+            public void draw()
+            { 
+            }
+
+        
+        }
     }
 }
