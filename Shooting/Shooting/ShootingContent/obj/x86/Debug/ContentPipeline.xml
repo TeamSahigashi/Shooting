@@ -17,7 +17,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\yushiroPC\Documents\GitHub\Shooting\Shooting\Shooting\Shooting\bin\x86\Debug\Content\beatle.xnb</Output>
-      <Time>2013-08-28T17:45:54.8244758+09:00</Time>
+      <Time>2013-08-28T22:44:39.489708+09:00</Time>
     </Item>
     <Item>
       <Source>すいか.png</Source>
@@ -26,7 +26,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\yushiroPC\Documents\GitHub\Shooting\Shooting\Shooting\Shooting\bin\x86\Debug\Content\watermelon.xnb</Output>
-      <Time>2013-08-28T17:56:04.4383437+09:00</Time>
+      <Time>2013-08-28T22:44:39.4907081+09:00</Time>
     </Item>
     <Item>
       <Source>たまたて.png</Source>
@@ -35,7 +35,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\yushiroPC\Documents\GitHub\Shooting\Shooting\Shooting\Shooting\bin\x86\Debug\Content\tamatate.xnb</Output>
-      <Time>2013-08-28T18:03:51.078034+09:00</Time>
+      <Time>2013-08-28T22:44:39.4917081+09:00</Time>
     </Item>
     <Item>
       <Source>たまよこ.png</Source>
@@ -44,7 +44,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\yushiroPC\Documents\GitHub\Shooting\Shooting\Shooting\Shooting\bin\x86\Debug\Content\tamayoko.xnb</Output>
-      <Time>2013-08-28T18:03:33.3690211+09:00</Time>
+      <Time>2013-08-28T22:44:39.4927082+09:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
