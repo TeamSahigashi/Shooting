@@ -63,6 +63,14 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="たまたて.png">
+      <Name>tamatate</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="たまよこ.png">
       <Name>tamayoko</Name>
       <Importer>TextureImporter</Importer>
