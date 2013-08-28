@@ -74,6 +74,15 @@ namespace Shooting
             {
                 return size;
             }
+         	/// <summary>
+	        /// HPを返す
+	        /// </summary>
+	        /// <returns>ヒットポイント</returns>
+            public int checkHP()
+            {
+                return HP;
+            }
+
         }
         class Actor : Object
         {
@@ -146,6 +155,16 @@ namespace Shooting
                 exist = true;
             }
 
+            /// <summary>
+            /// 死んだときなど、プレイヤーの位置を再設定
+            /// </summary>
+            /// <param name="pos">プレイヤーの再設定位置</param>
+            public void setPos(Vector2 pos)
+            {
+                position = pos;
+            }
+
+
             public void update()
             {
                 KeyboardState KeyState = Keyboard.GetState();
@@ -201,12 +220,12 @@ namespace Shooting
             /// 玉のコントラクタ
             /// </summary>
             /// <param name="posi">玉の位置</param>
-            /// <param name="settexture"></param>
-            /// <param name="setsize"></param>
-            /// <param name="setHP"></param>
-            /// <param name="setspeed"></param>
-            /// <param name="shokiposi"></param>
-            public Tama(Vector2 posi, Texture2D settexture, Vector2 setsize, int setHP, Vector2 setspeed, Vector2 shokiposi)
+            /// <param name="settexture">玉のテクスチャ</param>
+            /// <param name="setsize">玉のサイズ</param>
+            /// <param name="setHP">玉の威力</param>
+            /// <param name="setspeed">玉のスピード</param>
+            /// <param name="setshokiposi">玉の初期位置</param>
+            public Tama(Vector2 posi, Texture2D settexture, Vector2 setsize, int setHP, Vector2 setspeed, Vector2 setshokiposi)
             {
                 position = new Vector2(posi.X, posi.Y);
                 texture = settexture; //うまくいかなかったらここ
@@ -214,7 +233,7 @@ namespace Shooting
                 HP = setHP;
                 speed = setspeed;
                 exist = true;
-                shokiposi = new Vector2(shokiposi.X, shokiposi.Y);
+                shokiposi = new Vector2(setshokiposi.X, setshokiposi.Y);
             }
             /// <summary>
             /// 玉をセット
