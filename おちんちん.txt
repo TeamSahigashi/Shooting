@@ -1,16 +1,17 @@
-＾ω＾)おっ
-おお！
+object.delete()
 
-受けたダメージだけHPへらす
-damage(int )
+Exist -> false
 
-コンストラクタをplayer enemy tamaそれぞれに
 
-class player{
+player.getItem(item)
+itemをとったときの操作
 
-public player(...){
 
-}
+残機減らすときにHPを初期値に戻す必要ある（要確認）
 
-？？
-？
+
+player.recover()
+
+復帰処理
+
+無敵＋位置の再設定
