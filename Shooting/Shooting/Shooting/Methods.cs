@@ -24,11 +24,10 @@ namespace Shooting
             {
                 player = new Player(Vector2.Zero, texturePlayer, new Vector2(texturePlayer.Width, texturePlayer.Height), zanki, new Vector2(1, 1), zanki);
                 syokaiyobidashi = false;
-                
             }
 
-
             player.update();
+            
             if (EnemyList != null)
             {
                 foreach (var item in EnemyList)
@@ -36,6 +35,7 @@ namespace Shooting
                     item.update();
                 }
             }
+
             if (TamaList != null)
             {
                 foreach (var item in TamaList)
@@ -43,6 +43,8 @@ namespace Shooting
                     item.update();
                 }
             }
+
+            this.Window.Title = "stagenum = " + stagenum + " scenenum = " + scenenum;
 
             switch (stagenum)
             {
@@ -60,29 +62,50 @@ namespace Shooting
             }
 
             //クリアしたら次の面へいく
-            if (clearflag)
-            {
-                stagenum++;
-                clearflag = false;
-                syokaiyobidashi = true;
-            }
+            checkClear();
 
 
-            //なんかあたった？
+
+            /*ここから当たり判定処理*/
             //プレイヤーと弾
             foreach (var item in TamaList)
             {
                 if (hit(item,player))
                 {
-                    player.HPReduce(1); //弾の定義まち
+                    player.HPReduce(item.checkHP()); //自分のHP減らす
+                    item.delete(); //弾を消す（Exist->false）
                 }
             }
+
             //プレイヤーと敵
+            foreach (var item in EnemyList)
+            {
+                if (hit(item, player))
+                {
+                    player.HPReduce(1); //敵の攻撃力？
+                }
+            }
 
             //プレイヤーとアイテム
+            foreach (var item in ItemList)
+            {
+                player.getItem(item); //アイテムとったときの挙動
+                item.delete(); //アイテムを消す
+            }
             //敵と弾
+            foreach (var itemEne in EnemyList)
+            {
+                foreach (var itemTama in TamaList)
+                {
+                    if (hit(itemEne,itemTama))
+                    {
+                        itemEne.HPReduce(itemTama.checkHP()); //敵のHPへらす
+                        itemTama.delete(); //たま消す
+                    }
+                }
+            }
 
-            //ダメージ受けたら残機減る
+            /*ここまで当たり判定処理*/
 
 
             //いなくなった奴はリストから抜く
@@ -154,6 +177,16 @@ namespace Shooting
                 return true;
             }
             return false;
+        }
+
+        void checkClear()
+        {
+            if (clearflag)
+            {
+                stagenum++;
+                clearflag = false;
+                syokaiyobidashi = true;
+            }
         }
     }
 }
