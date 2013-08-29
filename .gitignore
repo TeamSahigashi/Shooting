@@ -214,14 +214,4 @@ pip-log.txt
 #Mr Developer
 .mr.developer.cfg
 
-Library
-Temp
-*.pidb
-*.unityproj
-*.sln
-*.userprefs
-*.suo
-*.cache
-*.exe
-*.ptb
-.suo
+
