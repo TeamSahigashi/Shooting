@@ -83,7 +83,16 @@ namespace Shooting
                 if (hit(item, player))
                 {
                     player.HPReduce(1); //敵の攻撃力？
+                    
                 }
+            }
+
+            //HP０なら残機減らす
+            if (player.checkHP() == 0)
+            {
+                player.zankiReduce(1); 
+                //残機減ったら死んだ処理する
+                player.recover();
             }
 
             //プレイヤーとアイテム
@@ -110,6 +119,7 @@ namespace Shooting
 
             //いなくなった奴はリストから抜く
             removeObject();
+
 
         }
 
