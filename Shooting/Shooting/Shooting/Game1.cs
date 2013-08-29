@@ -150,5 +150,6 @@ namespace Shooting
             base.Draw(gameTime);
         }
     }
-    
+    //
 }
+

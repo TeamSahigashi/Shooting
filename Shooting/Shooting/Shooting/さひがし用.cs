@@ -183,7 +183,9 @@ namespace Shooting
         }
         class Enemy : Actor
         {
+            Vector2 shokiposi;
             public Enemy() { }
+            int num;
             /// <summary>
             /// 敵のコンストラクタ
             /// </summary>
@@ -193,7 +195,7 @@ namespace Shooting
             /// <param name="setHP">敵のHP</param>
             /// <param name="setspeed">敵のスピード</param>
             /// <param name="setzanki">敵の残機</param>
-            public Enemy(Vector2 posi, Texture2D settexture, Vector2 setsize, int setHP, Vector2 setspeed, int setzanki)
+            public Enemy(Vector2 posi, Texture2D settexture, Vector2 setsize, int setHP, Vector2 setspeed, int setzanki, Vector2 setshokiposi)
             {
                 position = new Vector2(posi.X, posi.Y);
                 texture = settexture; //うまくいかなかったらここ
@@ -201,10 +203,27 @@ namespace Shooting
                 HP = setHP;
                 speed = setspeed;
                 exist = true;
+                shokiposi = new Vector2(setshokiposi.X, setshokiposi.Y);
+                
+            }
+            /// <summary>
+            /// 敵を配置
+            /// </summary>
+            /// <param name="shokiposition">初期位置</param>
+            /// <param name="enemynum">敵番号</param>
+            public void set(Vector2 shokiposition, int enemynum)
+            {
+                shokiposi = shokiposition;
+                position = shokiposition;
+                num = enemynum;
             }
             public void update()
             {
-
+                switch (enemynum)
+                {
+                    case 1:
+                        position.X += 4;
+                }
             }
             public void draw(SpriteBatch spriteBatch)
             {
@@ -280,3 +299,4 @@ namespace Shooting
         }
     }
 }
+
