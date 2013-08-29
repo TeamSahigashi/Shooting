@@ -109,8 +109,8 @@ namespace Shooting
 
 
             //いなくなった奴はリストから抜く
-            
-            //
+            removeObject();
+
         }
 
         /// <summary>
@@ -188,5 +188,19 @@ namespace Shooting
                 syokaiyobidashi = true;
             }
         }
+
+        void removeObject()
+        {
+            EnemyList.RemoveAll(checkExist);
+            ItemList.RemoveAll(checkExist);
+            TamaList.RemoveAll(checkExist);
+          
+        }
+
+        static bool checkExist(Object ob) //この要素を削除する
+        {
+            return !ob.checkExist();
+        }
+        
     }
 }
